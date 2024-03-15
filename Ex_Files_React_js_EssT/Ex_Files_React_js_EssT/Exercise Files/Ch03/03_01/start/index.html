@@ -17,15 +17,60 @@
     <div id="root"></div>
 
     <script type="text/babel">
+
+      const dishes = [
+        "Sushi",
+        "Pizza",
+        "Hamburger"
+      ]
+
+      let dishObjects = dishes.map((dish, i) => (
+      {id: i,
+      title: dish}
+      ))
+
       function Header(){
         return (<header>
           <h1>My Kitchen</h1>
         </header>);
       }
+
+      function Main(props){
+        return (
+          <section>
+            <img height={200} src="https://images.pexels.com/photos/7393901/pexels-photo-7393901.jpeg" alt="Food on plate"/>
+            <ul>
+              {dishObjects.map(dish => (
+                <li key={dish.id}>{dish.title}</li>
+              ))}
+              </ul>
+            </section>
+        )
+      }
+
+      function Footer(props){
+        return (<footer>
+          <p>Copyright {props.year}</p>
+          </footer>)
+      }
+
+      function App(){
+        return (
+          // React.Fragment is like a div but doesnt clutter the html DOM
+          <React.Fragment>      
+            <Header/>
+            <Main dish={dishObjects}/>
+            <Footer year= {new Date().getFullYear()}/>
+            </React.Fragment>
+        )
+      }
       ReactDOM.render(
-        <Header/>,
+        <App/>,
         document.getElementById("root")
       );
+
+
+
     </script>
   </body>
 </html>
