@@ -1,36 +1,12 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useReducer } from "react";
 
 function App() {
-  const [emotion, setEmotion] = useState("happy");
-  const [secondary, setSecondary] =
-    useState("tired");
-  useEffect(() => {
-    console.log(`It's ${emotion} around here!`);
-  }, [emotion]);
-
-  useEffect(() => {
-    console.log(`It's ${secondary} around here!`);
-  }, [secondary]);
+ const [check, setChecked] = useReducer((check) => !check, false) //useReducer makes it so you can put function in once and call it
   return (
     <div className="App">
-      <h1>Current emotion is {emotion}</h1>
-      <button onClick={() => setEmotion("sad")}>
-        Sad
-      </button>
-      <button
-        onClick={() => setEmotion("excited")}
-      >
-        Excited
-      </button>
-      <h2>
-        Current secondary emotion is {secondary}.
-      </h2>
-      <button
-        onClick={() => setSecondary("grateful")}
-      >
-        Grateful
-      </button>
+      <input type="checkbox" value={check} onChange={setChecked}></input>
+      <label>{check ? "checked" : "unchecked"}</label>
     </div>
   );
 }
