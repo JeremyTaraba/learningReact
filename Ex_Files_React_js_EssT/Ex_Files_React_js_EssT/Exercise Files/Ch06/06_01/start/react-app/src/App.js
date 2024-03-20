@@ -1,40 +1,27 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function useInput(initialValue) {
-  const [value, setValue] =
-    useState(initialValue);
-  return [
-    {
-      value,
-      onChange: (e) => setValue(e.target.value)
-    },
-    () => setValue(initialValue)
-  ];
+function GithubUser({name, location, avatar}){
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{location}</p>
+      <img src={avatar} height={150} alt={name}/>
+    </div>
+  )
 }
 
+
 function App() {
-  const [titleProps, resetTitle] = useInput("");
-  const [colorProps, resetColor] =
-    useState("#000000");
-  const submit = (e) => {
-    e.preventDefault();
-    alert(
-      `${titleProps.value}, ${colorProps.value}`
-    );
-    resetTitle();
-    resetColor();
-  };
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    fetch(`https://api.github.com/users/jeremytaraba`).then((response) => response.json()).then(setData)
+  }, [])
+  if(data){
+    return <GithubUser name={data.name} location={data.location} avatar={data.avatar_url}/>
+  }
   return (
-    <form onSubmit={submit}>
-      <input
-        {...titleProps}
-        type="text"
-        placeholder="color title..."
-      />
-      <input {...colorProps} type="color" />
-      <button>ADD</button>
-    </form>
+    <h1>Data</h1>
   );
 }
 
