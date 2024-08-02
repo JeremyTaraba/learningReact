@@ -2,33 +2,44 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { MdEmail } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div>
+    <div className="main_card">
+      <img src='./src/assets/BiggerLinkedInPic.jpg'></img>
+      <main>
+        <h1>Jeremy Taraba</h1>
+        <h3>Software Developer</h3>
+        <p>jeremytaraba.github.io</p>
+        <button className="email_button"><MdEmail /> Email</button>
+        <button className="linkedin_button"><FaLinkedin /> LinkedIn</button>
+        <h2>About</h2>
+        <p>I am a software developer who recently moved to New York City. I love working on innovative and challenging projects.</p>
+        <h2>Interests</h2>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Coding. Technology. Web Dev.
         </p>
+      </main>
+      
+      
+
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <footer>
+        <button><FaTwitter /></button>
+        <button><FaFacebook /></button>
+        <button><FaInstagram /></button>
+        <button><FaGithub /></button>
+      </footer>
+    </div>
   )
 }
 

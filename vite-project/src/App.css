@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
 }
 
 .logo {
@@ -39,4 +40,63 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.main_card{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #1A1B21;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+img{
+  width: 400px;
+}
+
+.email_button{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+}
+
+.linkedin_button{
+  background-color: #0077B5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+}
+
+h3{
+  margin: 0px;
+  color: orange;
+}
+
+footer{
+  background-color: #161619;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+footer button{
+  margin: 5px;
 }
