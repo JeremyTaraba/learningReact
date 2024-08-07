@@ -1,0 +1,40 @@
+nav{
+    background-color: #F55A5A;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    height: 2.8rem;
+    font-size: 1.2rem;
+    place-items: center;
+    float: none;
+  
+    
+}
+
+nav p {
+    margin: 0;
+    padding-left: 0.5rem;
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+
+}
+
+
+.world_icon{
+    display: inline-block;
+    padding-top: 0.5rem;
+    margin-right: 0.5rem;
+    
+ 
+}
+
+.centered_items{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
